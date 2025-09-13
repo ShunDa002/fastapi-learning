@@ -1,0 +1,11 @@
+/* 
+To access the static file:
+    http://127.0.0.1:8080/static/css/common.css
+    http://127.0.0.1:8080/static/imgs/illus.jpg
+    ..etc
+*/
+
+
+h1 {
+    color: rebeccapurple;
+}
