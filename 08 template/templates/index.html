@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+    Jinja2 filters(|)
+    Example:  xxx | upper
+              xxx | trim
+              xxx | striptags
+              xxx | replace("original word", "new word")
+    -->
+    <p>Username: {{ user | upper }}</p>
+    <p>Age: {{ age }}</p>
+    <p>Manga: {{ books }}</p>
+    <p>1st Manga: {{ books.0.title | title }}</p>
+    <p>2nd Manga: {{ books.1.title | title }}</p>
+    <p>3rd Manga: {{ books.2.title | title }}</p>
+    <p>4th Manga: {{ books.3.title | title }}</p>
+
+    <ul>
+      <li>{{ books.0 | capitalize }}</li>
+      <li>{{ books.1.title | capitalize }}</li>
+      <li>{{ books.2.title | capitalize }}</li>
+      <li>{{ books.3.title | capitalize }}</li>
+    </ul>
+
+    <p>Name: {{ info.name }}</p>
+    <p>Age: {{ info.age }}</p>
+    <p>Gender: {{ info.gender }}</p>
+
+    <p>{{ pie | round(3) }}</p>
+    <p>{{ pie | int }}</p>
+
+
+
+    <!-- Control Structures (if, for) -->
+    <p>Movies</p>
+    {% if age > 18 %}
+    <ul>
+      {% for movie in movies.adult %}
+      <li>{{ movie }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <ul>
+      {% for movie in movies.children %}
+      <li>{{ movie }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <hr />
+    <ul>
+      {% for book in books %}
+      {% if book.price > 20 %}
+      <li>{{ book.title }} - {{ book.price }}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>
