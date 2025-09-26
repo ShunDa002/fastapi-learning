@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  </head>
+  <body>
+    <p>Hello world</p>
+
+    <script>
+      $("p").click(function () {
+        $.ajax({
+          url: "http://127.0.0.1:8080/user",
+          success: function (res) {
+            console.log(res);
+            console.log(res.user);
+            $("p").html("hello " + res.user);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
