@@ -13,6 +13,8 @@ app.include_router(student_api, prefix="/student", tags=["course enrollment api"
 register_tortoise(
     app=app,
     config=TORTOISE_ORM,
+    # generate_schemas=True,
+    # add_exception_handlers=True,
 )
 
 
